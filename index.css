@@ -1,0 +1,226 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*Panel principal */
+#panel {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.banner-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.logo-animado {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: aparecer 2s ease-out, flotar 3s ease-in-out infinite;
+  width: 1200px; /* ajusta según el tamaño del logo */
+}
+
+/* Difuminación al aparecer */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Movimiento suave arriba y abajo */
+@keyframes flotar {
+  0%, 100% {
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    transform: translate(-50%, -55%);
+  }
+}
+
+
+/*body*/
+body {
+    background-color: #000;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    line-height: 1.6;
+}
+
+/* Header */
+#encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #111;
+    padding: 10px 20px;
+    box-shadow: 0 2px 10px rgba(255, 100, 100, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#encabezado img {
+    height: 60px;
+    margin-right: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+#encabezado img:hover {
+    transform: scale(1.05);
+}
+
+#encabezado label {
+    color: orange;
+    font-weight: bold;
+    margin: 0 10px;
+    cursor: pointer;
+     transition-timing-function: ease-in-out;
+}
+#encabezado label:hover {
+scale: 8s;
+    text-decoration: dashed;
+    transition-duration: 1s;
+    color:#fffefe ;
+    text-decoration: underline;
+   
+}
+
+#encabezado button {
+    padding: 6px 14px;
+    border: none;
+    background-color: #ff4500;
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#encabezado button:hover {
+    background-color: #ff6a36;
+}
+
+/* Banner principal */
+#bannerprincipal,
+#bannersecundario {
+    margin: 30px auto;
+    background: linear-gradient(to bottom, #111, #1c1c1c);
+    border: 2px solid #ff4500;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 900px;
+    padding: 20px;
+    animation: fadeInUp 1s ease;
+}
+
+fieldset legend {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+legend img {
+    width: 200px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+legend h2 {
+    color: orange;
+    margin: 10px 0;
+}
+
+legend p {
+    margin: 10px 0 20px;
+    color: #ccc;
+    font-size: 1rem;
+    max-width: 700px;
+}
+
+legend input[type="button"] {
+    padding: 10px 25px;
+    background: linear-gradient(to right, #ff5e00, #ffb347);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s;
+}
+
+legend input[type="button"]:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to right, #ff7a00, #ffd194);
+}
+
+/* Footer */
+#pie_paguina {
+    background-color: #111;
+    color: #888;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 50px;
+    font-size: 0.9rem;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*carrucel*/
+  .carousel-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    margin-top: 20px;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 20px;
+    animation: scroll 30s linear infinite;
+  }
+
+  .review {
+    background-color: #1c1c1c;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    min-width: 200px;
+    flex-shrink: 0;
+  }
+
+  .review img {
+    width: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
