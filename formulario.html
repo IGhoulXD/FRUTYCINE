@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de Reserva</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #111;
+      color: white;
+    }
+
+    .asientos-container {
+      display: grid;
+      grid-template-columns: repeat(10, 50px);
+      gap: 8px;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .asiento {
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      line-height: 50px;
+    }
+
+    .disponible { background-color: #2196F3; }
+    .ocupado { background-color: #888; cursor: not-allowed; }
+    .seleccionado { background-color: orange; }
+
+    #formulario-datos {
+      display: none;
+      margin-top: 30px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Selecciona tus asientos</h1>
+  <p id="info-reserva"></p>
+
+  <div class="asientos-container" id="asientos"></div>
+
+  <button id="continuarBtn" style="display:none;">Continuar con compra</button>
+
+  <!-- FORM DATOS FINALES -->
+  <form id="formulario-datos">
+    <h2>Formulario de Reserva</h2>
+    <p id="info-seleccion"></p>
+    Combo (opcional):
+    <select name="combo">
+      <option value="">Ninguno</option>
+      <option value="Palomitas y Refresco">Palomitas y Refresco</option>
+      <option value="Combo Nachos">Combo Nachos</option>
+      <option value="Hotdog y Refresco">Hotdog y Refresco</option>
+    </select><br><br>
+    Cantidad: <input type="number" name="cantidad" min="1"><br><br>
+    Nombre: <input type="text" name="nombre" required><br><br>
+    Correo: <input type="email" name="correo" required><br><br>
+    <button type="submit">Generar Ticket</button>
+  </form>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const pelicula = params.get('pelicula');
+    const hora = params.get('hora');
+    const fecha = params.get('fecha');
+
+    document.getElementById('info-reserva').innerText = `Película: ${pelicula} | Fecha: ${fecha} | Hora: ${hora}`;
+
+    const filas = ['A','B','C','D','E','F','G','H','I','J'];
+    const columnas = 10;
+    const asientosContainer = document.getElementById('asientos');
+    const seleccionados = new Set();
+    const ocupados = ['B3','C4','D5','E6','F7','G8'];
+
+    filas.forEach(fila => {
+      for (let col = 1; col <= columnas; col++) {
+        const id = fila + col;
+        const btn = document.createElement('div');
+        btn.innerText = id;
+        btn.className = 'asiento';
+        if (ocupados.includes(id)) {
+          btn.classList.add('ocupado');
+        } else {
+          btn.classList.add('disponible');
+          btn.onclick = () => {
+            if (btn.classList.contains('seleccionado')) {
+              btn.classList.remove('seleccionado');
+              seleccionados.delete(id);
+            } else {
+              btn.classList.add('seleccionado');
+              seleccionados.add(id);
+            }
+            document.getElementById('continuarBtn').style.display = seleccionados.size > 0 ? 'inline-block' : 'none';
+          };
+        }
+        asientosContainer.appendChild(btn);
+      }
+    });
+
+    document.getElementById('continuarBtn').onclick = () => {
+      document.getElementById('formulario-datos').style.display = 'block';
+      document.getElementById('info-seleccion').innerText =
+        `Película: ${pelicula} | Fecha: ${fecha} | Hora: ${hora}\\nAsientos: ${Array.from(seleccionados).join(', ')}`;
+    };
+
+    document.getElementById('formulario-datos').onsubmit = function(e) {
+      e.preventDefault();
+      const combo = this.combo.value || "Ninguno";
+      const cantidad = this.cantidad.value || "0";
+      const nombre = this.nombre.value;
+      const correo = this.correo.value;
+      const asientos = Array.from(seleccionados).join(', ');
+
+      const url = new URL("ticket.html", window.location.origin);
+      url.searchParams.set("pelicula", pelicula);
+      url.searchParams.set("fecha", fecha);
+      url.searchParams.set("hora", hora);
+      url.searchParams.set("nombre", nombre);
+      url.searchParams.set("correo", correo);
+      url.searchParams.set("asientos", asientos);
+      url.searchParams.set("combo", combo);
+      url.searchParams.set("cantidad", cantidad);
+      window.location.href = url;
+    };
+  </script>
+
+</body>
+</html>

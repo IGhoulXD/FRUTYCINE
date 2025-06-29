@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ticket de Reserva - Frutycine</title>
+  <style>
+    body {
+      font-family: 'Courier New', monospace;
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 30px;
+    }
+    .ticket {
+      background: #333;
+      border: 2px dashed #ccc;
+      padding: 20px;
+      max-width: 500px;
+      margin: auto;
+      border-radius: 15px;
+    }
+    h1 {
+      color: orange;
+    }
+    .dato {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ticket">
+    <h1>🎟️ TICKET DE RESERVA 🎟️</h1>
+    <div class="dato" id="pelicula"></div>
+    <div class="dato" id="fecha"></div>
+    <div class="dato" id="hora"></div>
+    <div class="dato" id="nombre"></div>
+    <div class="dato" id="correo"></div>
+    <div class="dato" id="asientos"></div>
+    <div class="dato" id="combo"></div>
+  </div>
+
+  <script>
+    const p = new URLSearchParams(window.location.search);
+
+    document.getElementById("pelicula").innerText = "🎬 Película: " + p.get("pelicula");
+    document.getElementById("fecha").innerText = "📅 Fecha: " + p.get("fecha");
+    document.getElementById("hora").innerText = "🕒 Hora: " + p.get("hora");
+    document.getElementById("nombre").innerText = "👤 Nombre: " + p.get("nombre");
+    document.getElementById("correo").innerText = "📧 Correo: " + p.get("correo");
+    document.getElementById("asientos").innerText = "💺 Asientos: " + p.get("asientos");
+    document.getElementById("combo").innerText = "🍿 Combo: " + p.get("combo") + " x" + p.get("cantidad");
+  </script>
+
+</body>
+</html>

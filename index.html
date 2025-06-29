@@ -11,9 +11,10 @@
 <body>
 
   <!-- Header -->
-  <header id="encabezado"><div>
-    <img src="img/FRUTYCINE-Photoroom.png" alt="logo" id="logo" />
-    <img src="img/FRUTYCINE (2)-Photoroom (1).png" alt="nombre" />
+  <header id="encabezado">
+    <div>
+        <img src="img/FRUTYCINE-Photoroom.png" alt="logo" id="logo" />
+        <img src="img/FRUTYCINE (2)-Photoroom (1).png" alt="nombre"  />
     </div>
     <div>
       <label for="estrenos">Estrenos</label>
@@ -25,11 +26,23 @@
   </header>
 
   <!-- Banner Principal -->
-<div class="banner-container">
-  <img src="img/carteleraprin/banner.jpg" alt="banner" id="panel" />
-  <img src="img/carteleraprin/image.png" alt="logo" class="logo-animado" />
-</div>
+   <div class="banner-container">
+    <img src="img/carteleraprin/panel principal.png" alt="banner" id="banner" />
+    <img src="img/carteleraprin/image.png" alt="Logo Encima" class="imagen-encima" id="superpuesta"/>
+  </div>
 
+  <script>
+    // Agregar clase al hacer scroll
+    window.addEventListener("scroll", () => {
+      const imagen = document.getElementById("superpuesta");
+      const scrollTop = window.scrollY;
+      if (scrollTop > 100) {
+        imagen.classList.add("scroll-activo");
+      } else {
+        imagen.classList.remove("scroll-activo");
+      }
+    });
+  </script>
   <!-- Demon Slayer -->
   <fieldset id="bannerprincipal">
     <legend>
@@ -51,61 +64,60 @@
   </fieldset>
 
   <!-- Cartelera -->
-  <section id="cartelera">
-    <h2 style="text-align: center; margin: 20px 0;">Cartelera</h2>
-    <div style="text-align: center;">
-      <img src="img/cartelera.png" alt="cartelera" style="width: 80%; border-radius: 20px;" />
-    </div>
-    <div style="text-align: center; margin-top: 10px;">
-      <input type="button" value="Reservar boletos" />
+
+ <h2 style="text-align: center; color: orange;">Cartelera</h2>
+  
+ <div class="fechas-container">
+  <div class="fecha" onclick="cargarDiaOffset(0)">
+    <div class="dia-texto">Hoy</div>
+    <div class="fecha-numero" id="fecha0"></div>
+  </div>
+  <div class="fecha" onclick="cargarDiaOffset(1)">
+    <div class="dia-texto">Mañana</div>
+    <div class="fecha-numero" id="fecha1"></div>
+  </div>
+  <div class="fecha" onclick="cargarDiaOffset(2)">
+    <div class="dia-texto" id="texto2"></div>
+    <div class="fecha-numero" id="fecha2"></div>
+  </div>
+  <div class="fecha" onclick="cargarDiaOffset(3)">
+    <div class="dia-texto" id="texto3"></div>
+    <div class="fecha-numero" id="fecha3"></div>
+  </div>
+  <div class="fecha" onclick="cargarDiaOffset(4)">
+    <div class="dia-texto" id="texto4"></div>
+    <div class="fecha-numero" id="fecha4"></div>
+  </div>
+  <div class="fecha" onclick="cargarDiaOffset(5)">
+    <div class="dia-texto" id="texto5"></div>
+    <div class="fecha-numero" id="fecha5"></div>
+  </div>
+</div>
+<!-- Contenedor único para la tabla -->
+<div id="tabla-cartelera"></div>
+
+  <!-- Reseñas -->
+  <section id="reseñas" style="margin-top: 50px;">
+    <h2 style="text-align: center; color: orange;">Reseñas del cine</h2>
+    <div style="display: flex; justify-content: center; gap: 20px; margin: 20px;">
+      <div style="background-color: #1c1c1c; padding: 15px; border-radius: 10px; width: 200px;">
+        <img src="img/avatar1.png" alt="usuario" style="width: 50px;" />
+        <p>“La mejor experiencia visual que he tenido. El cine impecable y cómodo.”</p>
+        <p>★★★★★</p>
+      </div>
+      <div style="background-color: #1c1c1c; padding: 15px; border-radius: 10px; width: 200px;">
+        <img src="img/avatar2.png" alt="usuario" style="width: 50px;" />
+        <p>“Películas anime como se debe. Perfecta calidad y sonido.”</p>
+        <p>★★★★★</p>
+      </div>
+      <div style="background-color: #1c1c1c; padding: 15px; border-radius: 10px; width: 200px;">
+        <img src="img/avatar3.png" alt="usuario" style="width: 50px;" />
+        <p>“Me encantó el servicio VIP, muy recomendado para fans del anime.”</p>
+        <p>★★★★★</p>
+      </div>
     </div>
   </section>
 
-  <!-- Reseñas -->
-<section id="Reseñas">
-  <h2 style="text-align: center; color: orange;">Reseñas del cine</h2>
-  <div class="carousel-container">
-    <div class="carousel-track">
-      <!-- Repetimos los elementos para crear efecto continuo -->
-      <div class="review">
-        <img src="img/avatares/descarga (2).jpg" alt="usuario" />
-        <p>“La mejor experiencia visual que he tenido. El cine impecable y cómodo.”</p>
-        <p>★★★★★</p>
-      </div>
-      <div class="review">
-        <img src="img/avatares/descarga (1).jpg" alt="usuario" />
-        <p>“Películas anime como se debe. Perfecta calidad y sonido.”</p>
-        <p>★★★★★</p>
-      </div>
-      <div class="review">
-        <img src="img/avatares/descarga.jpg" alt="usuario" />
-        <p>“Me encantó el servicio VIP, muy recomendado para fans del anime.”</p>
-        <p>★★★★★</p>
-      </div>
-      <div class="review">
-        <img src="img/avatares/image.png" alt="usuario" />
-        <p>“Me encantó el servicio VIP, muy recomendado para fans del anime.”</p>
-        <p>★★★★★</p>
-      </div>
-      <div class="review">
-        <img src="img/avatares/images.jpg" alt="usuario" />
-        <p>“Me encantó el servicio VIP, muy recomendado para fans del anime.”</p>
-        <p>★★★★★</p>
-      </div>
-      <!-- Duplicado para bucle suave -->
-      <div class="review">
-        <img src="img/avatares/descarga (2).jpg" alt="usuario" />
-        <p>“La mejor experiencia visual que he tenido. El cine impecable y cómodo.”</p>
-        <p>★★★★★</p>
-      </div>
-      <div class="review">
-        <img src="img/avatares/descarga (1).jpg" alt="usuario" />
-        <p>“Películas anime como se debe. Perfecta calidad y sonido.”</p>
-        <p>★★★★★</p>
-      </div>
-    </div>
-  </div>
-</section>
   <!-- Menú -->
   <section id="menu" style="text-align: center; margin: 50px 0;">
     <h2 style="color: orange;">Menú VIP</h2>
@@ -145,10 +157,89 @@
         <p>atencion@frutycine.com</p>
         <p>+52 55 1022 4560</p>
       </div>
-      
     </div>
     <p style="text-align: center; margin-top: 20px;">© 2025 FRUTYCINE. Todos los derechos reservados.</p>
   </footer>
+
+
+<!-- Logica de la cartelera -->
+
+<script>
+const diasSemana = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+const meses = ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC'];
+
+window.onload = () => {
+  for (let i = 0; i <= 5; i++) {
+    const fecha = new Date();
+    fecha.setDate(fecha.getDate() + i);
+    const diaNombre = diasSemana[fecha.getDay()];
+    const dia = fecha.getDate();
+    const mes = meses[fecha.getMonth()];
+
+    if (i >= 2) {
+      document.getElementById(`texto${i}`).innerText = diaNombre;
+    }
+
+    document.getElementById(`fecha${i}`).innerText = `${dia} ${mes}`;
+  }
+};
+
+function cargarDiaOffset(offset) {
+  const fecha = new Date();
+  fecha.setDate(fecha.getDate() + offset);
+  const fechaStr = fecha.toISOString().split('T')[0];
+
+  // 🟡 Aquí puedes usar un fetch real:
+  // fetch(`getHorarios.php?fecha=${fechaStr}`)
+  //   .then(res => res.json())
+  //   .then(data => renderCartelera(data, fechaStr));
+
+  // Simulación de horarios desde JS
+  const cartelera = [
+    {
+      titulo: "Your name",
+      imagen:"img/yourname.png",
+      horarios: ["13:00", "16:00", "19:00"]
+    },
+    {
+      titulo: "demon slayer infinity castle",
+      imagen : "img/image.png",
+      horarios: ["12:00", "15:30", "20:00"]
+    }
+  ];
+
+  renderCartelera(cartelera, fechaStr);
+}
+
+function renderCartelera(cartelera, fecha) {
+  let html = `<table border="1" style="margin-top:20px; width:90%; margin-left:auto; margin-right:auto; text-align:center;">
+    <tr><th>Película</th><th>Horarios disponibles</th></tr>`;
+
+  cartelera.forEach(pelicula => {
+    html += `<tr>
+      <td>
+        <img src="${pelicula.imagen}" alt="${pelicula.titulo}" style="width:120px; height:auto; border-radius:10px;"><br>
+        <strong>${pelicula.titulo}</strong>
+      </td>
+      <td>
+        ${pelicula.horarios.map(h =>
+          `<button onclick="seleccionarHorario('${pelicula.titulo}', '${h}', '${fecha}')">${h}</button>`
+        ).join('<br>')}
+      </td>
+    </tr>`;
+  });
+
+  html += `</table>`;
+  document.getElementById('tabla-cartelera').innerHTML = html;
+}
+
+
+function seleccionarHorario(pelicula, hora, fecha) {
+  const url = `formulario.html?pelicula=${encodeURIComponent(pelicula)}&hora=${encodeURIComponent(hora)}&fecha=${encodeURIComponent(fecha)}`;
+  window.location.href = url;
+}
+</script>
+
 
 </body>
 </html>
