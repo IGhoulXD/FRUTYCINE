@@ -1,0 +1,40 @@
+   body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #111;
+      color: white;
+    }
+
+    .asientos-container {
+      display: grid;
+      grid-template-columns: repeat(10, 50px);
+      gap: 8px;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .asiento {
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      line-height: 50px;
+    }
+
+    .disponible { background-color: #2196F3; }
+    .ocupado { background-color: #888; cursor: not-allowed; }
+    .seleccionado { background-color: orange; }
+
+    #formulario-datos {
+      display: none;
+      margin-top: 30px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
