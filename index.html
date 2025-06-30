@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FRUTYCINE</title>
-  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="css/index.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
@@ -26,10 +26,10 @@
   </header>
 
   <!-- Banner Principal -->
-   <div class="banner-container">
-    <img src="img/carteleraprin/panel principal.png" alt="banner" id="banner" />
-    <img src="img/carteleraprin/image.png" alt="Logo Encima" class="imagen-encima" id="superpuesta"/>
-  </div>
+ <div class="banner-container">
+  <img src="img/carteleraprin/banner.jpg" alt="banner" id="panel" />
+  <img src="img/carteleraprin/image.png" alt="logo" class="logo-animado" />
+</div>
 
   <script>
     // Agregar clase al hacer scroll
@@ -97,27 +97,52 @@
 <div id="tabla-cartelera"></div>
 
   <!-- Reseñas -->
-  <section id="reseñas" style="margin-top: 50px;">
-    <h2 style="text-align: center; color: orange;">Reseñas del cine</h2>
-    <div style="display: flex; justify-content: center; gap: 20px; margin: 20px;">
-      <div style="background-color: #1c1c1c; padding: 15px; border-radius: 10px; width: 200px;">
-        <img src="img/avatar1.png" alt="usuario" style="width: 50px;" />
+<section id="Reseñas">
+  <h2 style="text-align: center; color: orange;">Reseñas del cine</h2>
+  <div class="carousel-container">
+    <div class="carousel-track">
+      <!-- Repetimos los elementos para crear efecto continuo -->
+      <div class="review">
+        <img src="img/avatares/descarga (2).jpg" alt="usuario" />
         <p>“La mejor experiencia visual que he tenido. El cine impecable y cómodo.”</p>
         <p>★★★★★</p>
       </div>
-      <div style="background-color: #1c1c1c; padding: 15px; border-radius: 10px; width: 200px;">
-        <img src="img/avatar2.png" alt="usuario" style="width: 50px;" />
+      <div class="review">
+        <img src="img/avatares/descarga (1).jpg" alt="usuario" />
         <p>“Películas anime como se debe. Perfecta calidad y sonido.”</p>
         <p>★★★★★</p>
       </div>
-      <div style="background-color: #1c1c1c; padding: 15px; border-radius: 10px; width: 200px;">
-        <img src="img/avatar3.png" alt="usuario" style="width: 50px;" />
+      <div class="review">
+        <img src="img/avatares/descarga.jpg" alt="usuario" />
         <p>“Me encantó el servicio VIP, muy recomendado para fans del anime.”</p>
         <p>★★★★★</p>
       </div>
+      <div class="review">
+        <img src="img/avatares/image.png" alt="usuario" />
+        <p>“Me encantó el servicio VIP, muy recomendado para fans del anime.”</p>
+        <p>★★★★★</p>
+      </div>
+      <div class="review">
+        <img src="img/avatares/images.jpg" alt="usuario"/>
+        <p>“Me encantó el servicio VIP, muy recomendado para fans del anime.”</p>
+        <p>★★★★★</p>
+      </div>
+      <!-- Duplicado para bucle suave -->
+      <div class="review">
+        <img src="img/avatares/descarga (2).jpg" alt="usuario" />
+        <p>“La mejor experiencia visual que he tenido. El cine impecable y cómodo.”</p>
+        <p>★★★★★</p>
+      </div>
+      <div class="review">
+        <img src="img/avatares/descarga (1).jpg" alt="usuario" />
+        <p>“Películas anime como se debe. Perfecta calidad y sonido.”</p>
+        <p>★★★★★</p>
+      </div>
     </div>
-  </section>
-
+  </div>
+</section> 
+<!-- Video animado solo para que se vea bonito gif -->
+<img src="img/avatares/TVRU.gif" alt="gif" id="gif"  />
   <!-- Menú -->
   <section id="menu" style="text-align: center; margin: 50px 0;">
     <h2 style="color: orange;">Menú VIP</h2>
