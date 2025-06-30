@@ -1,0 +1,242 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    line-height: 1.6;
+}
+
+    .banner-container {
+      position: relative;
+      width: 100%;
+      height: 800px;
+      overflow: hidden;
+    }
+
+    #banner {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .imagen-encima {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) translateY(-50px);
+      opacity: 0;
+      width: 1000px;
+      transition: all 1s ease;
+      animation: entrada 1.5s forwards;
+    }
+
+    @keyframes entrada {
+      0% {
+        transform: translate(-50%, -50%) translateY(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(-50%, -50%) translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .scroll-activo {
+      transform: translate(-50%, -50%) translateY(20px);
+      opacity: 0.5;
+    }
+/* Header */
+
+#encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #111;
+    padding: 10px 20px;
+    box-shadow: 0 2px 10px rgba(255, 100, 100, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#encabezado img {
+    height: 60px;
+    margin-right: 10px;
+    transition: transform 0.5s ease-in-out;
+}
+#encabezado img:hover {
+    transform: scale(1.5);
+}
+
+#encabezado label {
+    color: orange;
+    font-weight: bolder;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: color 0.5s;
+     padding: 6px 14px;
+       text-decoration-style:dashed ;
+   
+}
+#encabezado label:hover {
+    color: #ff6347;
+     text-decoration: underline;
+    text-decoration-color: orange;
+    animation: 3s infinite;
+   
+}
+
+#encabezado button {
+    padding: 6px 14px;
+    border: none;
+    background-color: #ff4500;
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#encabezado button:hover {
+    background-color: #ff8636;
+   
+}
+
+/* Banner principal */
+#bannerprincipal,
+#bannersecundario {
+    margin: 30px auto;
+    background: linear-gradient(to bottom, #111, #1c1c1c);
+    border: 2px solid #ff4500;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 900px;
+    padding: 20px;
+    animation: fadeInUp 1s ease;
+}
+
+fieldset legend {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+legend img {
+    width: 200px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+legend h2 {
+    color: orange;
+    margin: 10px 0;
+}
+
+legend p {
+    margin: 10px 0 20px;
+    color: #ccc;
+    font-size: 1rem;
+    max-width: 700px;
+}
+
+legend input[type="button"] {
+    padding: 10px 25px;
+    background: linear-gradient(to right, #ff5e00, #ffb347);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s;
+}
+
+legend input[type="button"]:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to right, #ff7a00, #ffd194);
+}
+
+/* Footer */
+#pie_paguina {
+    background-color: #111;
+    color: #888;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 50px;
+    font-size: 0.9rem;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* cartelera*/
+.fechas-container {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 15px 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.fecha {
+  text-align: center;
+  cursor: pointer;
+  padding: 2px 10px;
+  transition: color 0.3s, transform 0.3s;
+  background-color: #555;
+
+
+}
+
+.fecha:hover {
+  transform: scale(1.05);
+  color: #ff6a00;
+}
+
+.dia-texto {
+  font-size: 1px;
+  color: #555;
+}
+
+.fecha-numero {
+  font-weight: 700;
+  font-size: 16px;
+  color: #eb6708;
+  letter-spacing: 1px;
+}
+
+.filtros {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #4e7efc;
+  font-size: 12px;
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+  padding: 5px 8px;
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+.filtros:hover {
+  background: #f0f4ff;
+}
