@@ -5,156 +5,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FRUTYCINE</title>
   <link rel="stylesheet" href="css/index.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
 </head>
 
 <body>
-
   <!-- Header -->
   <header id="encabezado">
     <div>
-        <img src="img/FRUTYCINE-Photoroom.png" alt="logo" id="logo" />
-        <img src="img/FRUTYCINE (2)-Photoroom (1).png" alt="nombre"  />
+        <img src=" img/FRUTYCINE-Photoroom.png" alt="logo" id="logo" />
+        <img src=" img/FRUTYCINE (2)-Photoroom (1).png" alt="nombre"  />
     </div>
     <div>
       <label for="estrenos">Estrenos</label>
       <label for="cartelera">Cartelera</label>
       <label for="reseñas">Reseñas</label>
       <label for="tienda">Tienda</label>
-      <button>Login</button>
+      <a href="login.php">
+        <button type="button" id="login">
+          <img src=" img/avatares/login.png" alt="login" style="width: 50px;height: 50px;">
+        </button>
+      </a>
     </div>
   </header>
 
   <!-- Banner Principal -->
- <div class="banner-container">
-  <img src="img/carteleraprin/banner.jpg" alt="banner" id="panel" />
-  <img src="img/carteleraprin/image.png" alt="logo" class="logo-animado" />
-</div>
+  <div class="banner-container">
+    <img src=" img/carteleraprin/banner.jpg" alt="banner" id="panel" />
+    <img src=" img/carteleraprin/image.png" alt="logo" class="logo-animado" />
+  </div>
 
-  <script>
-    // Agregar clase al hacer scroll
-    window.addEventListener("scroll", () => {
-      const imagen = document.getElementById("superpuesta");
-      const scrollTop = window.scrollY;
-      if (scrollTop > 100) {
-        imagen.classList.add("scroll-activo");
-      } else {
-        imagen.classList.remove("scroll-activo");
-      }
-    });
-  </script>
-  <!-- Demon Slayer -->
+  <!-- Contenido dinámico -->
   <fieldset id="bannerprincipal">
     <legend>
-      <img src="img/image.png" alt="demonslayer" />
+      <img src=" img/image.png" alt="demonslayer" />
       <h2>Demon Slayer Infinity Castle</h2>
       <p>Esta primera entrega de la épica trilogía, producida por el aclamado estudio de animación ufotable, llegará exclusivamente a los cines el 11 de septiembre de 2025.</p>
       <input type="button" value="Reservar boletos" />
     </legend>
   </fieldset>
 
-  <!-- Your Name -->
   <fieldset id="bannersecundario">
     <legend>
-      <img src="img/yourname.png" alt="yourname" />
+      <img src=" img/yourname.png" alt="yourname" />
       <h2>Your Name</h2>
-      <p>Mitsuha es una adolescente que detesta su vida rural. Taki es un chico que vive en Tokio y sueña con ser artista. Sus destinos se entrelazan cuando comienzan a intercambiar sus cuerpos por las noches.</p>
+      <p>Mitsuha es una adolescente que detesta su vida rural. Taki es un chico que vive en Tokio y sueña con ser artista...</p>
       <input type="button" value="Reservar boletos" />
     </legend>
   </fieldset>
 
-  <!-- Cartelera -->
 
- <h2 style="text-align: center; color: orange;">Cartelera</h2>
-  
- <div class="fechas-container">
-  <div class="fecha" onclick="cargarDiaOffset(0)">
-    <div class="dia-texto">Hoy</div>
-    <div class="fecha-numero" id="fecha0"></div>
-  </div>
-  <div class="fecha" onclick="cargarDiaOffset(1)">
-    <div class="dia-texto">Mañana</div>
-    <div class="fecha-numero" id="fecha1"></div>
-  </div>
-  <div class="fecha" onclick="cargarDiaOffset(2)">
-    <div class="dia-texto" id="texto2"></div>
-    <div class="fecha-numero" id="fecha2"></div>
-  </div>
-  <div class="fecha" onclick="cargarDiaOffset(3)">
-    <div class="dia-texto" id="texto3"></div>
-    <div class="fecha-numero" id="fecha3"></div>
-  </div>
-  <div class="fecha" onclick="cargarDiaOffset(4)">
-    <div class="dia-texto" id="texto4"></div>
-    <div class="fecha-numero" id="fecha4"></div>
-  </div>
-  <div class="fecha" onclick="cargarDiaOffset(5)">
-    <div class="dia-texto" id="texto5"></div>
-    <div class="fecha-numero" id="fecha5"></div>
-  </div>
-</div>
-<!-- Contenedor único para la tabla -->
-<div id="tabla-cartelera"></div>
+ <!-- cartelera -->
 
-  <!-- Reseñas -->
-<section id="Reseñas">
-  <h2 style="text-align: center; color: orange;">Reseñas del cine</h2>
-  <div class="carousel-container">
-    <div class="carousel-track">
-      <!-- Repetimos los elementos para crear efecto continuo -->
-      <div class="review">
-        <img src="img/avatares/descarga (2).jpg" alt="usuario" />
-        <p>“La mejor experiencia visual que he tenido. El cine impecable y cómodo.”</p>
-        <p>★★★★★</p>
-      </div>
-      <div class="review">
-        <img src="img/avatares/descarga (1).jpg" alt="usuario" />
-        <p>“Películas anime como se debe. Perfecta calidad y sonido.”</p>
-        <p>★★★★★</p>
-      </div>
-      <div class="review">
-        <img src="img/avatares/descarga.jpg" alt="usuario" />
-        <p>“Me encantó el servicio VIP, muy recomendado para fans del anime.”</p>
-        <p>★★★★★</p>
-      </div>
-      <div class="review">
-        <img src="img/avatares/image.png" alt="usuario" />
-        <p>“Me encantó el servicio VIP, muy recomendado para fans del anime.”</p>
-        <p>★★★★★</p>
-      </div>
-      <div class="review">
-        <img src="img/avatares/images.jpg" alt="usuario"/>
-        <p>“Me encantó el servicio VIP, muy recomendado para fans del anime.”</p>
-        <p>★★★★★</p>
-      </div>
-      <!-- Duplicado para bucle suave -->
-      <div class="review">
-        <img src="img/avatares/descarga (2).jpg" alt="usuario" />
-        <p>“La mejor experiencia visual que he tenido. El cine impecable y cómodo.”</p>
-        <p>★★★★★</p>
-      </div>
-      <div class="review">
-        <img src="img/avatares/descarga (1).jpg" alt="usuario" />
-        <p>“Películas anime como se debe. Perfecta calidad y sonido.”</p>
-        <p>★★★★★</p>
+  <h2 style="text-align: center; color: orange;">Cartelera</h2>
+
+  <div class="fechas-container">
+    <!-- Botones de días -->
+    <div class="fecha" onclick="cargarDiaOffset(0)"><div class="dia-texto">Hoy</div><div class="fecha-numero" id="fecha0"></div></div>
+    <div class="fecha" onclick="cargarDiaOffset(1)"><div class="dia-texto">Mañana</div><div class="fecha-numero" id="fecha1"></div></div>
+    <div class="fecha" onclick="cargarDiaOffset(2)"><div class="dia-texto" id="texto2"></div><div class="fecha-numero" id="fecha2"></div></div>
+    <div class="fecha" onclick="cargarDiaOffset(3)"><div class="dia-texto" id="texto3"></div><div class="fecha-numero" id="fecha3"></div></div>
+    <div class="fecha" onclick="cargarDiaOffset(4)"><div class="dia-texto" id="texto4"></div><div class="fecha-numero" id="fecha4"></div></div>
+    <div class="fecha" onclick="cargarDiaOffset(5)"><div class="dia-texto" id="texto5"></div><div class="fecha-numero" id="fecha5"></div></div>
+  </div>
+
+  <div id="tabla-cartelera"></div>
+
+
+
+  <!-- Repetidas -->
+  <section id="Reseñas">
+    <h2 style="text-align: center; color: orange;">Reseñas del cine</h2>
+    <div class="carousel-container">
+      <div class="carousel-track">
+        <!-- Repetidas para carrusel -->
+        <div class="review"><img src=" img/avatares/descarga (2).jpg" alt="usuario" /><p>“La mejor experiencia visual...”</p><p>★★★★★</p></div>
+        <div class="review"><img src=" img/avatares/descarga (1).jpg" alt="usuario" /><p>“Películas anime como se debe...”</p><p>★★★★★</p></div>
+        <div class="review"><img src=" img/avatares/descarga.jpg" alt="usuario" /><p>“Me encantó el servicio VIP...”</p><p>★★★★★</p></div>
+        <div class="review"><img src=" img/avatares/image.png" alt="usuario" /><p>“Me encantó el servicio VIP...”</p><p>★★★★★</p></div>
+        <div class="review"><img src=" img/avatares/images.jpg" alt="usuario" /><p>“Me encantó el servicio VIP...”</p><p>★★★★★</p></div>
       </div>
     </div>
-  </div>
-</section> 
-<!-- Video animado solo para que se vea bonito gif -->
-<img src="img/avatares/TVRU.gif" alt="gif" id="gif"  />
-  <!-- Menú -->
-  <section id="menu" style="text-align: center; margin: 50px 0;">
-    <h2 style="color: orange;">Menú VIP</h2>
-    <img src="img/popcorn-vip.png" alt="vip" style="width: 150px;" />
-    <p>Conoce todos los productos, alimentos y promociones especiales que tenemos para tu experiencia VIP.</p>
-
-    <h2 style="color: orange; margin-top: 30px;">Menú Tradicional</h2>
-    <img src="img/popcorn-normal.png" alt="tradicional" style="width: 150px;" />
-    <p>Disfruta de todos los alimentos y bebidas que hacen de tu visita al cine algo inolvidable.</p>
   </section>
 
-  <!-- Footer -->
+  <img src=" img/avatares/TVRU.gif" alt="gif" id="gif" />
+
+  <section id="menu" style="text-align: center; margin: 50px 0;">
+    <h2 style="color: orange;">Menú Palomitas</h2>
+    <img src=" img/popcorn-vip.png" alt="vip" style="width: 150px;" />
+    <p>Conoce todos los productos y promociones especiales.</p>
+    <h2 style="color: orange; margin-top: 30px;">Menú Bebidas</h2>
+    <img src=" img/popcorn-normal.png" alt="tradicional" style="width: 150px;" />
+    <p>Disfruta de alimentos y bebidas inolvidables.</p>
+  </section>
+
   <footer id="pie_paguina">
     <div style="display: flex; justify-content: space-around; flex-wrap: wrap; padding: 20px;">
       <div>
@@ -186,85 +129,7 @@
     <p style="text-align: center; margin-top: 20px;">© 2025 FRUTYCINE. Todos los derechos reservados.</p>
   </footer>
 
-
-<!-- Logica de la cartelera -->
-
-<script>
-const diasSemana = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
-const meses = ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC'];
-
-window.onload = () => {
-  for (let i = 0; i <= 5; i++) {
-    const fecha = new Date();
-    fecha.setDate(fecha.getDate() + i);
-    const diaNombre = diasSemana[fecha.getDay()];
-    const dia = fecha.getDate();
-    const mes = meses[fecha.getMonth()];
-
-    if (i >= 2) {
-      document.getElementById(`texto${i}`).innerText = diaNombre;
-    }
-
-    document.getElementById(`fecha${i}`).innerText = `${dia} ${mes}`;
-  }
-};
-
-function cargarDiaOffset(offset) {
-  const fecha = new Date();
-  fecha.setDate(fecha.getDate() + offset);
-  const fechaStr = fecha.toISOString().split('T')[0];
-
-  // 🟡 Aquí puedes usar un fetch real:
-  // fetch(`getHorarios.php?fecha=${fechaStr}`)
-  //   .then(res => res.json())
-  //   .then(data => renderCartelera(data, fechaStr));
-
-  // Simulación de horarios desde JS
-  const cartelera = [
-    {
-      titulo: "Your name",
-      imagen:"img/yourname.png",
-      horarios: ["13:00", "16:00", "19:00"]
-    },
-    {
-      titulo: "demon slayer infinity castle",
-      imagen : "img/image.png",
-      horarios: ["12:00", "15:30", "20:00"]
-    }
-  ];
-
-  renderCartelera(cartelera, fechaStr);
-}
-
-function renderCartelera(cartelera, fecha) {
-  let html = `<table border="1" style="margin-top:20px; width:90%; margin-left:auto; margin-right:auto; text-align:center;">
-    <tr><th>Película</th><th>Horarios disponibles</th></tr>`;
-
-  cartelera.forEach(pelicula => {
-    html += `<tr>
-      <td>
-        <img src="${pelicula.imagen}" alt="${pelicula.titulo}" style="width:120px; height:auto; border-radius:10px;"><br>
-        <strong>${pelicula.titulo}</strong>
-      </td>
-      <td>
-        ${pelicula.horarios.map(h =>
-          `<button onclick="seleccionarHorario('${pelicula.titulo}', '${h}', '${fecha}')">${h}</button>`
-        ).join('<br>')}
-      </td>
-    </tr>`;
-  });
-
-  html += `</table>`;
-  document.getElementById('tabla-cartelera').innerHTML = html;
-}
-
-
-function seleccionarHorario(pelicula, hora, fecha) {
-  const url = `formulario.html?pelicula=${encodeURIComponent(pelicula)}&hora=${encodeURIComponent(hora)}&fecha=${encodeURIComponent(fecha)}`;
-  window.location.href = url;
-}
-</script>
-
-
+  <!-- Script separado -->
+  <script src=" js/index.js"></script>
 </body>
 </html>

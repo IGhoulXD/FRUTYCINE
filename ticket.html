@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Ticket de Reserva - Frutycine</title>
- <link rel="stylesheet" href="css/ticket.css" />
+  <link rel="stylesheet" href="css/ticket.css" />
 </head>
 <body>
 
@@ -18,17 +18,27 @@
     <div class="dato" id="combo"></div>
   </div>
 
-  <script>
-    const p = new URLSearchParams(window.location.search);
-
-    document.getElementById("pelicula").innerText = "🎬 Película: " + p.get("pelicula");
-    document.getElementById("fecha").innerText = "📅 Fecha: " + p.get("fecha");
-    document.getElementById("hora").innerText = "🕒 Hora: " + p.get("hora");
-    document.getElementById("nombre").innerText = "👤 Nombre: " + p.get("nombre");
-    document.getElementById("correo").innerText = "📧 Correo: " + p.get("correo");
-    document.getElementById("asientos").innerText = "💺 Asientos: " + p.get("asientos");
-    document.getElementById("combo").innerText = "🍿 Combo: " + p.get("combo") + " x" + p.get("cantidad");
-  </script>
-
+  <script src="js/ticket.js"></script>
 </body>
 </html>
+
+<!--consulta para el ticket
+SELECT 
+  p.nombre AS pelicula,
+  f.fecha,
+  f.hora,
+  u.nombre,
+  u.correo,
+  GROUP_CONCAT(b.asiento) AS asientos,
+  GROUP_CONCAT(pr.nombre) AS combo
+FROM ordenes o
+JOIN usuarios u ON o.idUsuario = u.idUsuario
+JOIN boletos b ON b.idUsuario = u.idUsuario
+JOIN funciones f ON b.idFuncion = f.idFuncion
+JOIN peliculas p ON f.idPelicula = p.idPelicula
+LEFT JOIN detalle_orden do ON do.idOrden = o.idOrden
+LEFT JOIN productos pr ON pr.idProducto = do.idProducto
+WHERE o.idOrden = ?
+GROUP BY o.idOrden;
+
+-->

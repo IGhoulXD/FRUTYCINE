@@ -76,12 +76,13 @@ body {
 }
 
 #encabezado label {
+  position: static;
     color: orange;
     font-weight: bolder;
     margin: 0 10px;
     cursor: pointer;
     transition: color 0.5s;
-     padding: 6px 14px;
+     padding: 0 10px;
        text-decoration-style:dashed ;
    
 }
@@ -94,9 +95,11 @@ body {
 }
 
 #encabezado button {
+   width: 80px;
+   height: 80px;
     padding: 6px 14px;
     border: none;
-    background-color: #ff4500;
+    background-color: #111;
     color: white;
     border-radius: 20px;
     font-weight: bold;
@@ -104,7 +107,7 @@ body {
     transition: background-color 0.3s;
 }
 #encabezado button:hover {
-    background-color: #ff8636;
+    background-color: #f7f7f7;
    
 }
 
@@ -240,3 +243,91 @@ legend input[type="button"]:hover {
 .filtros:hover {
   background: #f0f4ff;
 }
+/*carrusel*/
+
+#panel {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.banner-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.logo-animado {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: aparecer 2s ease-out, flotar 3s ease-in-out infinite;
+  width: 1400px; /* ajusta según el tamaño del logo */
+}
+
+/* Difuminación al aparecer */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Movimiento suave arriba y abajo */
+@keyframes flotar {
+  0%, 100% {
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    transform: translate(-50%, -55%);
+  }
+}
+#gif{
+
+ 
+}
+/*reseñas*/
+  .carousel-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    margin-top: 20px;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 20px;
+    animation: scroll 30s linear infinite;
+  }
+
+  .review {
+    background-color: #1c1c1c;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    min-width: 200px;
+    flex-shrink: 0;
+  }
+
+  .review img {
+    width: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+ 
